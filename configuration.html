@@ -112,9 +112,10 @@ background colors, while the <tt class="docutils literal"><span class="pre">soft
 segments with the same background color.</p>
 </dd>
 <dt><tt class="docutils literal"><span class="pre">paths</span></tt></dt>
-<dd>Defines additional paths which will be searched for modules when using
+<dd><p class="first last" id="config-common-paths">Defines additional paths which will be searched for modules when using
 <a class="reference internal" href="#config-themes-seg-module"><em>module segment option</em></a>. Paths defined here
-have priority when searching for modules.</dd>
+have priority when searching for modules.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="extension-specific-configuration">
@@ -218,11 +219,13 @@ in the <a class="reference internal" href="#config-themes-seg-name"><em>name opt
 <dt><tt class="docutils literal"><span class="pre">string</span></tt></dt>
 <dd>A static string segment where the contents is defined in the
 <a class="reference internal" href="#config-themes-seg-contents"><em>contents option</em></a>, and the
-highlighting group is defined in the <a class="reference internal" href="#config-themes-seg-highlight"><em>highlight option</em></a>.</dd>
+highlighting group is defined in the <a class="reference internal" href="#config-themes-seg-highlight-group"><em>highlight_group
+option</em></a>.</dd>
 <dt><tt class="docutils literal"><span class="pre">filler</span></tt></dt>
 <dd>If the statusline is rendered with a specific width, remaining
 whitespace is distributed among filler segments. The
-highlighting group is defined in the <a class="reference internal" href="#config-themes-seg-highlight"><em>highlight option</em></a>.</dd>
+highlighting group is defined in the <a class="reference internal" href="#config-themes-seg-highlight-group"><em>highlight_group
+option</em></a>.</dd>
 </dl>
 </dd>
 <dt><tt class="docutils literal"><span class="pre">module</span></tt></dt>
@@ -233,8 +236,8 @@ highlighting group is defined in the <a class="reference internal" href="#config
 <dt><tt class="docutils literal"><span class="pre">name</span></tt></dt>
 <dd><p class="first last" id="config-themes-seg-name">Function name, only required for function segments.</p>
 </dd>
-<dt><tt class="docutils literal"><span class="pre">highlight</span></tt></dt>
-<dd><p class="first last" id="config-themes-seg-highlight">Highlighting group for this segment. Consists of a prioritized list
+<dt><tt class="docutils literal"><span class="pre">highlight_group</span></tt></dt>
+<dd><p class="first last" id="config-themes-seg-highlight-group">Highlighting group for this segment. Consists of a prioritized list
 of highlighting groups, where the first highlighting group that is
 available in the colorscheme is used.</p>
 </dd>
@@ -283,7 +286,7 @@ included in all modes, <em>except</em> for the modes in this list.</dd>
 <p>Segments are written in Python, and the default segments provided with
 Powerline are located in <tt class="file docutils literal"><span class="pre">powerline/segments/</span><em><span class="pre">extension</span></em><span class="pre">.py</span></tt>.
 User-defined segments can be defined in any module in <tt class="docutils literal"><span class="pre">sys.path</span></tt> or
-<em class="xref std std-ref">paths common configuration option</em>, import is
+<a class="reference internal" href="#config-common-paths"><em>paths common configuration option</em></a>, import is
 always absolute.</p>
 <p>Segments are regular Python functions, and they may accept arguments. All
 arguments should have a default value which will be used for themes that
@@ -292,9 +295,9 @@ don&#8217;t provide an <tt class="docutils literal"><span class="pre">args</span
 <ul class="simple">
 <li><tt class="docutils literal"><span class="pre">None</span></tt>, which will remove the segment from the prompt/statusline.</li>
 <li>A string, which will be the segment contents.</li>
-<li>A dict consisting of a <tt class="docutils literal"><span class="pre">contents</span></tt> string, and a <tt class="docutils literal"><span class="pre">highlight</span></tt> list. This
-is useful for providing a particular highlighting group depending on the
-segment contents.</li>
+<li>A list of dicts consisting of a <tt class="docutils literal"><span class="pre">contents</span></tt> string, and
+a <tt class="docutils literal"><span class="pre">highlight_group</span></tt> list. This is useful for providing a particular
+highlighting group depending on the segment contents.</li>
 </ul>
 </div>
 </div>

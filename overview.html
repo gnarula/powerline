@@ -72,12 +72,13 @@ distribution&#8217;s documentation for details on how to compile and install
 packages.</p>
 <p>Vim version 7.3.661 or newer is recommended for performance reasons.</p>
 </div>
-<div class="section" id="additional-dependencies">
-<h3>Additional dependencies<a class="headerlink" href="#additional-dependencies" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="optional-dependencies">
+<h3>Optional dependencies<a class="headerlink" href="#optional-dependencies" title="Permalink to this headline">¶</a></h3>
 <p>The following Python packages are not required by all segments, but
 recommended for optimal performance:</p>
 <ul class="simple">
 <li><tt class="docutils literal"><span class="pre">pygit2</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">mercurial</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">psutil</span></tt></li>
 </ul>
 </div>
@@ -157,6 +158,9 @@ You can then enable the vim plugin by adding the following line to your
 <div class="highlight-vim"><div class="highlight"><pre>python from powerline.bindings.<span class="k">vim</span> import source_plugin; source_plugin<span class="p">()</span>
 </pre></div>
 </div>
+<p>If you want to enable Python 3 support, substitute the <tt class="docutils literal"><span class="pre">python</span></tt> command
+above with <tt class="docutils literal"><span class="pre">python3</span></tt>. Note that this is somewhat experimental as some
+segments don&#8217;t have support for Python 3 yet.</p>
 <p>If Powerline is installed somewhere other than Python&#8217;s site-packages
 directories you&#8217;ll either have to use a plugin manager like Vundle, or
 source the vim plugin file with an absolute path to the plugin location.</p>
@@ -174,41 +178,30 @@ the main Powerline project directory:</p>
 </div>
 </div>
 </div>
-<div class="section" id="terminal-prompts">
-<h3>Terminal prompts<a class="headerlink" href="#terminal-prompts" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="shell-prompts">
+<h3>Shell prompts<a class="headerlink" href="#shell-prompts" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="bash-prompt">
 <h4>Bash prompt<a class="headerlink" href="#bash-prompt" title="Permalink to this headline">¶</a></h4>
-<p>Add the following to your <tt class="docutils literal"><span class="pre">.bashrc</span></tt>:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="k">function </span>_update_ps1<span class="o">()</span> <span class="o">{</span>
-   <span class="nb">export </span><span class="nv">PS1</span><span class="o">=</span><span class="s2">&quot;$(powerline-prompt)&quot;</span>
-<span class="o">}</span>
-
-<span class="nb">export </span><span class="nv">PROMPT_COMMAND</span><span class="o">=</span><span class="s2">&quot;_update_ps1&quot;</span>
+<p>Add the following line to your <tt class="docutils literal"><span class="pre">.bashrc</span></tt>, where <tt class="docutils literal"><span class="pre">{path}</span></tt> is the absolute
+path to your Powerline installation directory:</p>
+<div class="highlight-bash"><div class="highlight"><pre>. <span class="o">{</span>path<span class="o">}</span>/powerline/bindings/bash/prompt.sh
 </pre></div>
 </div>
 </div>
 <div class="section" id="zsh-prompt">
 <h4>Zsh prompt<a class="headerlink" href="#zsh-prompt" title="Permalink to this headline">¶</a></h4>
-<p>Add the following to your <tt class="docutils literal"><span class="pre">.zshrc</span></tt>:</p>
-<div class="highlight-bash"><div class="highlight"><pre>setopt prompt_subst
-<span class="nb">export </span><span class="nv">PS1</span><span class="o">=</span><span class="s1">&#39;$(powerline-prompt --renderer_module=zsh_prompt)&#39;</span>
+<p>Add the following line to your <tt class="docutils literal"><span class="pre">.zshrc</span></tt>, where <tt class="docutils literal"><span class="pre">{path}</span></tt> is the absolute
+path to your Powerline installation directory:</p>
+<div class="highlight-bash"><div class="highlight"><pre>. <span class="o">{</span>path<span class="o">}</span>/powerline/bindings/zsh/prompt.zsh
 </pre></div>
 </div>
 </div>
 </div>
 <div class="section" id="tmux-statusline">
 <h3>Tmux statusline<a class="headerlink" href="#tmux-statusline" title="Permalink to this headline">¶</a></h3>
-<p>Add the following to your <tt class="docutils literal"><span class="pre">tmux.conf</span></tt>:</p>
-<div class="highlight-python"><pre>set-option -g status on
-set-option -g status-interval 2
-set-option -g status-utf8 on
-set-option -g status-left-length 100
-set-option -g status-left "#(powerline-tmux left)"
-set-option -g status-right-length 100
-set-option -g status-right "#(powerline-tmux right)"
-set-option -g status-justify "centre"
-set-option -g status-bg "colour235"
-set-option -g status-fg "colour249"</pre>
+<p>Add the following line to your <tt class="docutils literal"><span class="pre">.tmux.conf</span></tt>, where <tt class="docutils literal"><span class="pre">{path}</span></tt> is the
+absolute path to your Powerline installation directory:</p>
+<div class="highlight-python"><pre>source '{path}/powerline/bindings/tmux/powerline.conf'</pre>
 </div>
 </div>
 </div>
@@ -225,7 +218,7 @@ set-option -g status-fg "colour249"</pre>
 <li><a class="reference internal" href="#">Overview</a><ul>
 <li><a class="reference internal" href="#requirements">Requirements</a><ul>
 <li><a class="reference internal" href="#vim-plugin-requirements">Vim plugin requirements</a></li>
-<li><a class="reference internal" href="#additional-dependencies">Additional dependencies</a></li>
+<li><a class="reference internal" href="#optional-dependencies">Optional dependencies</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#installation">Installation</a><ul>
@@ -244,7 +237,7 @@ set-option -g status-fg "colour249"</pre>
 <li><a class="reference internal" href="#vundle-installation">Vundle installation</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#terminal-prompts">Terminal prompts</a><ul>
+<li><a class="reference internal" href="#shell-prompts">Shell prompts</a><ul>
 <li><a class="reference internal" href="#bash-prompt">Bash prompt</a></li>
 <li><a class="reference internal" href="#zsh-prompt">Zsh prompt</a></li>
 </ul>
