@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="Powerline beta documentation" href="index.html" />
-    <link rel="next" title="License" href="license-credits.html" />
+    <link rel="next" title="License and credits" href="license-credits.html" />
     <link rel="prev" title="Configuration" href="configuration.html" /> 
   </head>
   <body>
@@ -36,7 +36,7 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="license-credits.html" title="License"
+          <a href="license-credits.html" title="License and credits"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="configuration.html" title="Configuration"
@@ -51,84 +51,134 @@
           <div class="body">
             
   <div class="section" id="troubleshooting">
-<h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h1>
-<dl class="docutils">
-<dt>I can&#8217;t see any fancy symbols, what&#8217;s wrong?</dt>
-<dd><p class="first">Make sure that you&#8217;ve configured gvim or your terminal emulator to use
+<h1><a class="toc-backref" href="#id1">Troubleshooting</a><a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#troubleshooting" id="id1">Troubleshooting</a><ul>
+<li><a class="reference internal" href="#general-issues" id="id2">General issues</a><ul>
+<li><a class="reference internal" href="#i-can-t-see-any-fancy-symbols-what-s-wrong" id="id3">I can&#8217;t see any fancy symbols, what&#8217;s wrong?</a></li>
+<li><a class="reference internal" href="#the-fancy-symbols-look-a-bit-blurry-or-off" id="id4">The fancy symbols look a bit blurry or &#8220;off&#8221;!</a></li>
+<li><a class="reference internal" href="#i-m-unable-to-patch-my-font-what-should-i-do" id="id5">I&#8217;m unable to patch my font, what should I do?</a></li>
+<li><a class="reference internal" href="#the-colors-look-weird-in-the-default-os-x-terminal-app" id="id6">The colors look weird in the default OS X Terminal app!</a></li>
+<li><a class="reference internal" href="#the-colors-look-weird-in-iterm2" id="id7">The colors look weird in iTerm2!</a></li>
+<li><a class="reference internal" href="#i-m-using-tmux-and-powerline-looks-like-crap-what-s-wrong" id="id8">I&#8217;m using tmux and Powerline looks like crap, what&#8217;s wrong?</a></li>
+<li><a class="reference internal" href="#i-m-using-putty-and-i-get-huge-gaps-around-the-arrow-glyphs" id="id9">I&#8217;m using PuTTY and I get huge gaps around the arrow glyphs!</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#vim-specific-issues" id="id10">Vim-specific issues</a><ul>
+<li><a class="reference internal" href="#the-statusline-has-strange-characters-like-b-in-it" id="id11">The statusline has strange characters like <tt class="docutils literal"><span class="pre">^B</span></tt> in it!</a></li>
+<li><a class="reference internal" href="#the-statusline-has-a-lot-of-or-underline-characters-in-it" id="id12">The statusline has a lot of <tt class="docutils literal"><span class="pre">^</span></tt> or underline characters in it!</a></li>
+<li><a class="reference internal" href="#the-statusline-is-hidden-only-appears-in-split-windows" id="id13">The statusline is hidden/only appears in split windows!</a></li>
+<li><a class="reference internal" href="#i-m-using-gvim-for-windows-and-cmd-windows-keep-popping-up-when-working-in-git-repos" id="id14">I&#8217;m using gVim for Windows, and <tt class="docutils literal"><span class="pre">cmd</span></tt> windows keep popping up when working in git repos!</a></li>
+<li><a class="reference internal" href="#i-receive-a-nameerror-when-trying-to-use-powerline-with-macvim" id="id15">I receive a <tt class="docutils literal"><span class="pre">NameError</span></tt> when trying to use Powerline with MacVim!</a></li>
+<li><a class="reference internal" href="#i-receive-an-importerror-when-trying-to-use-powerline-on-os-x" id="id16">I receive an <tt class="docutils literal"><span class="pre">ImportError</span></tt> when trying to use Powerline on OS X!</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="general-issues">
+<h2><a class="toc-backref" href="#id2">General issues</a><a class="headerlink" href="#general-issues" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="i-can-t-see-any-fancy-symbols-what-s-wrong">
+<h3><a class="toc-backref" href="#id3">I can&#8217;t see any fancy symbols, what&#8217;s wrong?</a><a class="headerlink" href="#i-can-t-see-any-fancy-symbols-what-s-wrong" title="Permalink to this headline">¶</a></h3>
+<p>Make sure that you&#8217;ve configured gvim or your terminal emulator to use
 a patched font (see <a class="reference internal" href="fontpatching.html#font-patching"><em>Font patching</em></a>).</p>
 <p>Make sure that vim is compiled with the <tt class="docutils literal"><span class="pre">--with-features=big</span></tt> flag.</p>
 <p>If you&#8217;re using rxvt-unicode, make sure that it&#8217;s compiled with the
 <tt class="docutils literal"><span class="pre">--enable-unicode3</span></tt> flag.</p>
 <p>If you&#8217;re using iTerm2, please update to <a class="reference external" href="https://github.com/gnachman/iTerm2/commit/8e3ad6dabf83c60b8cf4a3e3327c596401744af6">this revision</a>
 or newer.</p>
-<p class="last">You need to set your <tt class="docutils literal"><span class="pre">LANG</span></tt> and <tt class="docutils literal"><span class="pre">LC_*</span></tt> environment variables to
+<p>You need to set your <tt class="docutils literal"><span class="pre">LANG</span></tt> and <tt class="docutils literal"><span class="pre">LC_*</span></tt> environment variables to
 a UTF-8 locale (e.g. <tt class="docutils literal"><span class="pre">LANG=en_US.utf8</span></tt>). Consult your Linux distro&#8217;s
 documentation for information about setting these variables correctly.</p>
-</dd>
-<dt>The fancy symbols look a bit blurry or &#8220;off&#8221;!</dt>
-<dd>Make sure that you have patched all variants of your font (i.e. both the
-regular and the bold font files).</dd>
-<dt>I&#8217;m unable to patch my font, what should I do?</dt>
-<dd><p class="first">Font patching is only known to work on most Linux and OS X machines. If
-you have followed the instructions on <a class="reference internal" href="fontpatching.html#font-patching"><em>Font patching</em></a> and still
-have problems, please submit an issue on GitHub.</p>
-<p class="last">You could also check out the <a class="reference external" href="https://github.com/Lokaltog/powerline-fonts">powerline-fonts</a> repository on GitHub for
+</div>
+<div class="section" id="the-fancy-symbols-look-a-bit-blurry-or-off">
+<h3><a class="toc-backref" href="#id4">The fancy symbols look a bit blurry or &#8220;off&#8221;!</a><a class="headerlink" href="#the-fancy-symbols-look-a-bit-blurry-or-off" title="Permalink to this headline">¶</a></h3>
+<p>Make sure that you have patched all variants of your font (i.e. both the
+regular and the bold font files).</p>
+</div>
+<div class="section" id="i-m-unable-to-patch-my-font-what-should-i-do">
+<h3><a class="toc-backref" href="#id5">I&#8217;m unable to patch my font, what should I do?</a><a class="headerlink" href="#i-m-unable-to-patch-my-font-what-should-i-do" title="Permalink to this headline">¶</a></h3>
+<p>Font patching is only known to work on most Linux and OS X machines. If you
+have followed the instructions on <a class="reference internal" href="fontpatching.html#font-patching"><em>Font patching</em></a> and still have
+problems, please submit an issue on GitHub.</p>
+<p>You could also check out the <a class="reference external" href="https://github.com/Lokaltog/powerline-fonts">powerline-fonts</a> repository on GitHub for
 patched versions of some popular programming fonts.</p>
-</dd>
-<dt>The colors are weird in the default OS X Terminal app!</dt>
-<dd><p class="first">The default OS X Terminal app is known to have some issues with the
-Powerline colors. Please use another terminal emulator. iTerm2 should
-work fine.</p>
-<p class="last">The arrows may have the wrong colors if you have changed the &#8220;minimum
+</div>
+<div class="section" id="the-colors-look-weird-in-the-default-os-x-terminal-app">
+<h3><a class="toc-backref" href="#id6">The colors look weird in the default OS X Terminal app!</a><a class="headerlink" href="#the-colors-look-weird-in-the-default-os-x-terminal-app" title="Permalink to this headline">¶</a></h3>
+<p>The default OS X Terminal app is known to have some issues with the
+Powerline colors. Please use another terminal emulator. iTerm2 should work
+fine.</p>
+<p>The arrows may have the wrong colors if you have changed the &#8220;minimum
 contrast&#8221; slider in the color tab of  your OS X settings.</p>
-</dd>
-<dt>The colors are weird in iTerm2!</dt>
-<dd>Please disable background transparency to resolve this issue.</dd>
-<dt>I&#8217;m using tmux and Powerline looks like crap, what&#8217;s wrong?</dt>
-<dd><p class="first">You need to tell tmux that it has 256-color capabilities. Add this to
-your <tt class="file docutils literal"><span class="pre">.tmux.conf</span></tt> to solve this issue:</p>
+</div>
+<div class="section" id="the-colors-look-weird-in-iterm2">
+<h3><a class="toc-backref" href="#id7">The colors look weird in iTerm2!</a><a class="headerlink" href="#the-colors-look-weird-in-iterm2" title="Permalink to this headline">¶</a></h3>
+<p>Please disable background transparency to resolve this issue.</p>
+</div>
+<div class="section" id="i-m-using-tmux-and-powerline-looks-like-crap-what-s-wrong">
+<h3><a class="toc-backref" href="#id8">I&#8217;m using tmux and Powerline looks like crap, what&#8217;s wrong?</a><a class="headerlink" href="#i-m-using-tmux-and-powerline-looks-like-crap-what-s-wrong" title="Permalink to this headline">¶</a></h3>
+<p>You need to tell tmux that it has 256-color capabilities. Add this to your
+<tt class="file docutils literal"><span class="pre">.tmux.conf</span></tt> to solve this issue:</p>
 <div class="highlight-python"><pre>set -g default-terminal "screen-256color"</pre>
 </div>
-<p class="last">If you use iTerm2, make sure that you have enabled the setting &#8216;Set
-locale variables automatically&#8217; in Profiles &gt; Terminal &gt; Environment.</p>
-</dd>
-</dl>
-<div class="section" id="vim-specific-issues">
-<h2>Vim-specific issues<a class="headerlink" href="#vim-specific-issues" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt>The statusline has strange characters like <tt class="docutils literal"><span class="pre">^B</span></tt> in it!</dt>
-<dd>Please add <tt class="docutils literal"><span class="pre">set</span> <span class="pre">encoding=utf-8</span></tt> to your <tt class="file docutils literal"><span class="pre">vimrc</span></tt>.</dd>
-<dt>The statusline has a lot of <tt class="docutils literal"><span class="pre">^</span></tt> or underline characters in it!</dt>
-<dd><p class="first">You need to configure the <tt class="docutils literal"><span class="pre">fillchars</span></tt> setting to disable statusline
-fillchars (see <tt class="docutils literal"><span class="pre">:h</span> <span class="pre">fillchars</span></tt> for details). Add this to your
-<tt class="file docutils literal"><span class="pre">vimrc</span></tt> to solve this issue:</p>
-<div class="last highlight-python"><pre>set fillchars+=stl:\ ,stlnc:\</pre>
+<p>If you use iTerm2, make sure that you have enabled the setting
+<em class="guilabel">Set locale variables automatically</em> in <em class="menuselection">Profiles
+‣ Terminal ‣ Environment</em>.</p>
 </div>
-</dd>
-<dt>The statusline is hidden/only appears in split windows!</dt>
-<dd>Make sure that you have <tt class="docutils literal"><span class="pre">set</span> <span class="pre">laststatus=2</span></tt> in your <tt class="file docutils literal"><span class="pre">vimrc</span></tt>.</dd>
-<dt>I&#8217;m using gVim for Windows, and <tt class="docutils literal"><span class="pre">cmd</span></tt> windows keep popping up when working in git repos!</dt>
-<dd>Either install <tt class="docutils literal"><span class="pre">libgit2</span></tt> and <tt class="docutils literal"><span class="pre">pygit2</span></tt>, or disable the VCS segment in
-your user configuration to resolve this issue.</dd>
-<dt>I receive a <tt class="docutils literal"><span class="pre">NameError</span></tt> when trying to use Powerline with MacVim!</dt>
-<dd><p class="first">Please install MacVim using this command:</p>
+<div class="section" id="i-m-using-putty-and-i-get-huge-gaps-around-the-arrow-glyphs">
+<h3><a class="toc-backref" href="#id9">I&#8217;m using PuTTY and I get huge gaps around the arrow glyphs!</a><a class="headerlink" href="#i-m-using-putty-and-i-get-huge-gaps-around-the-arrow-glyphs" title="Permalink to this headline">¶</a></h3>
+<p>Please uncheck <em class="guilabel">Treat CJK ambiguous characters as wide</em> in
+<em class="menuselection">Window ‣ Translation</em>.</p>
+</div>
+</div>
+<div class="section" id="vim-specific-issues">
+<h2><a class="toc-backref" href="#id10">Vim-specific issues</a><a class="headerlink" href="#vim-specific-issues" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-statusline-has-strange-characters-like-b-in-it">
+<h3><a class="toc-backref" href="#id11">The statusline has strange characters like <tt class="docutils literal"><span class="pre">^B</span></tt> in it!</a><a class="headerlink" href="#the-statusline-has-strange-characters-like-b-in-it" title="Permalink to this headline">¶</a></h3>
+<p>Please add <tt class="docutils literal"><span class="pre">set</span> <span class="pre">encoding=utf-8</span></tt> to your <tt class="file docutils literal"><span class="pre">vimrc</span></tt>.</p>
+</div>
+<div class="section" id="the-statusline-has-a-lot-of-or-underline-characters-in-it">
+<h3><a class="toc-backref" href="#id12">The statusline has a lot of <tt class="docutils literal"><span class="pre">^</span></tt> or underline characters in it!</a><a class="headerlink" href="#the-statusline-has-a-lot-of-or-underline-characters-in-it" title="Permalink to this headline">¶</a></h3>
+<p>You need to configure the <tt class="docutils literal"><span class="pre">fillchars</span></tt> setting to disable statusline
+fillchars (see <tt class="docutils literal"><span class="pre">:h</span> <span class="pre">fillchars</span></tt> for details). Add this to your <tt class="file docutils literal"><span class="pre">vimrc</span></tt>
+to solve this issue:</p>
+<div class="highlight-vim"><div class="highlight"><pre><span class="k">set</span> <span class="nb">fillchars</span><span class="p">+=</span><span class="nb">stl</span>:\ <span class="p">,</span>stlnc:\
+</pre></div>
+</div>
+</div>
+<div class="section" id="the-statusline-is-hidden-only-appears-in-split-windows">
+<h3><a class="toc-backref" href="#id13">The statusline is hidden/only appears in split windows!</a><a class="headerlink" href="#the-statusline-is-hidden-only-appears-in-split-windows" title="Permalink to this headline">¶</a></h3>
+<p>Make sure that you have <tt class="docutils literal"><span class="pre">set</span> <span class="pre">laststatus=2</span></tt> in your <tt class="file docutils literal"><span class="pre">vimrc</span></tt>.</p>
+</div>
+<div class="section" id="i-m-using-gvim-for-windows-and-cmd-windows-keep-popping-up-when-working-in-git-repos">
+<h3><a class="toc-backref" href="#id14">I&#8217;m using gVim for Windows, and <tt class="docutils literal"><span class="pre">cmd</span></tt> windows keep popping up when working in git repos!</a><a class="headerlink" href="#i-m-using-gvim-for-windows-and-cmd-windows-keep-popping-up-when-working-in-git-repos" title="Permalink to this headline">¶</a></h3>
+<p>Either install <tt class="docutils literal"><span class="pre">libgit2</span></tt> and <tt class="docutils literal"><span class="pre">pygit2</span></tt>, or disable the VCS segment in
+your user configuration to resolve this issue.</p>
+</div>
+<div class="section" id="i-receive-a-nameerror-when-trying-to-use-powerline-with-macvim">
+<h3><a class="toc-backref" href="#id15">I receive a <tt class="docutils literal"><span class="pre">NameError</span></tt> when trying to use Powerline with MacVim!</a><a class="headerlink" href="#i-receive-a-nameerror-when-trying-to-use-powerline-with-macvim" title="Permalink to this headline">¶</a></h3>
+<p>Please install MacVim using this command:</p>
 <div class="highlight-python"><pre>brew install macvim --env-std --override-system-vim</pre>
 </div>
 <p>Then install Powerline locally with <tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--user</span></tt>, or by
 running these commands in the <tt class="docutils literal"><span class="pre">powerline</span></tt> directory:</p>
-<div class="last highlight-python"><pre>./setup.py build
+<div class="highlight-python"><pre>./setup.py build
 ./setup.py install --user</pre>
 </div>
-</dd>
-<dt>I receive an <tt class="docutils literal"><span class="pre">ImportError</span></tt> when trying to use Powerline on OS X!</dt>
-<dd><p class="first">This is caused by an invalid <tt class="docutils literal"><span class="pre">sys.path</span></tt> when using system vim and
-system Python. Please try to select another Python distribution:</p>
+</div>
+<div class="section" id="i-receive-an-importerror-when-trying-to-use-powerline-on-os-x">
+<h3><a class="toc-backref" href="#id16">I receive an <tt class="docutils literal"><span class="pre">ImportError</span></tt> when trying to use Powerline on OS X!</a><a class="headerlink" href="#i-receive-an-importerror-when-trying-to-use-powerline-on-os-x" title="Permalink to this headline">¶</a></h3>
+<p>This is caused by an invalid <tt class="docutils literal"><span class="pre">sys.path</span></tt> when using system vim and system
+Python. Please try to select another Python distribution:</p>
 <div class="highlight-python"><pre>sudo port select python python27-apple</pre>
 </div>
-<p class="last">See the <a class="reference external" href="https://github.com/Lokaltog/powerline/issues/39">issue #39</a>
+<p>See the <a class="reference external" href="https://github.com/Lokaltog/powerline/issues/39">issue #39</a>
 for a discussion and other possible solutions for this issue.</p>
-</dd>
-</dl>
+</div>
 </div>
 </div>
 
@@ -141,6 +191,7 @@ for a discussion and other possible solutions for this issue.</p>
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Troubleshooting</a><ul>
+<li><a class="reference internal" href="#general-issues">General issues</a></li>
 <li><a class="reference internal" href="#vim-specific-issues">Vim-specific issues</a></li>
 </ul>
 </li>
@@ -151,7 +202,7 @@ for a discussion and other possible solutions for this issue.</p>
                         title="previous chapter">Configuration</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="license-credits.html"
-                        title="next chapter">License</a></p>
+                        title="next chapter">License and credits</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/troubleshooting.txt"
@@ -181,7 +232,7 @@ for a discussion and other possible solutions for this issue.</p>
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="license-credits.html" title="License"
+          <a href="license-credits.html" title="License and credits"
              >next</a> |</li>
         <li class="right" >
           <a href="configuration.html" title="Configuration"
