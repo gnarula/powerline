@@ -1,0 +1,290 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Installation on OS X &mdash; Powerline beta documentation</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'beta',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Powerline beta documentation" href="../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="../index.html">Powerline beta documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="installation-on-os-x">
+<span id="installation-osx"></span><h1>Installation on OS X<a class="headerlink" href="#installation-on-os-x" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="plugin-installation">
+<h2>Plugin installation<a class="headerlink" href="#plugin-installation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="python-package">
+<h3>Python package<a class="headerlink" href="#python-package" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Install a proper Python version (see <a class="reference external" href="https://github.com/Lokaltog/powerline/issues/39">issue #39</a> for a discussion
+regarding the required Python version on OS X):</p>
+<div class="highlight-python"><pre>sudo port select python python27-apple</pre>
+</div>
+</li>
+<li><p class="first">Install Powerline using the following command:</p>
+<div class="highlight-python"><pre>pip install --user git+git://github.com/Lokaltog/powerline</pre>
+</div>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You need to use the GitHub URI when installing Powerline! This
+project is currently unavailable on the PyPI due to a naming conflict
+with an unrelated project.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Installing Powerline with a vim plugin manager like Vundle is
+not recommended and not officially supported.</p>
+</div>
+</div>
+<div class="section" id="vim-installation">
+<h3>Vim installation<a class="headerlink" href="#vim-installation" title="Permalink to this headline">¶</a></h3>
+<p>Any terminal vim version with Python 3.3 or Python 2.7 support should work,
+but if you&#8217;re using MacVim you need to install it using the following
+command:</p>
+<div class="highlight-python"><pre>brew install macvim --env-std --override-system-vim</pre>
+</div>
+</div>
+</div>
+<div class="section" id="font-installation">
+<h2>Font installation<a class="headerlink" href="#font-installation" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="62%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head" colspan="2">Application/terminal emulator font support table</th>
+</tr>
+<tr class="row-even"><th class="head">Name</th>
+<th class="head">Patched font support</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-odd"><td>iTerm2</td>
+<td><img alt="supp_yes" src="../_images/tick.png" /></td>
+</tr>
+<tr class="row-even"><td>Terminal.app</td>
+<td><img alt="supp_yes" src="../_images/tick.png" /></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You need a patched font for Powerline to work on OS X. Check out
+the <a class="reference external" href="https://github.com/Lokaltog/powerline-fonts">powerline-fonts</a> repository on GitHub for patched versions of some
+popular programming fonts.</p>
+</div>
+<ol class="arabic">
+<li><p class="first">Download the font of your choice and install it by double-clicking the
+font file in Finder and then click <em class="guilabel">Install this font</em> in the
+preview window.</p>
+<p>If you can&#8217;t find your preferred font in the <a class="reference external" href="https://github.com/Lokaltog/powerline-fonts">powerline-fonts</a> repo,
+you&#8217;ll have to patch your own font instead. See <a class="reference internal" href="../fontpatching.html#font-patching"><em>Font patching</em></a> for
+instructions.</p>
+</li>
+<li><p class="first">Configure MacVim or your terminal emulator to use the patched font (the
+correct font usually ends with <em>for Powerline</em>).</p>
+</li>
+</ol>
+</div>
+<div class="section" id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#i-can-t-see-any-fancy-symbols-what-s-wrong" id="id2">I can&#8217;t see any fancy symbols, what&#8217;s wrong?</a></li>
+<li><a class="reference internal" href="#the-colors-look-weird-in-the-default-os-x-terminal-app" id="id3">The colors look weird in the default OS X Terminal app!</a></li>
+<li><a class="reference internal" href="#the-colors-look-weird-in-iterm2" id="id4">The colors look weird in iTerm2!</a></li>
+<li><a class="reference internal" href="#i-receive-a-nameerror-when-trying-to-use-powerline-with-macvim" id="id5">I receive a <tt class="docutils literal"><span class="pre">NameError</span></tt> when trying to use Powerline with MacVim!</a></li>
+<li><a class="reference internal" href="#i-receive-an-importerror-when-trying-to-use-powerline-on-os-x" id="id6">I receive an <tt class="docutils literal"><span class="pre">ImportError</span></tt> when trying to use Powerline on OS X!</a></li>
+<li><a class="reference internal" href="#i-m-using-tmux-and-powerline-looks-like-crap-what-s-wrong" id="id7">I&#8217;m using tmux and Powerline looks like crap, what&#8217;s wrong?</a></li>
+<li><a class="reference internal" href="#my-vim-statusline-has-strange-characters-like-b-in-it" id="id8">My vim statusline has strange characters like <tt class="docutils literal"><span class="pre">^B</span></tt> in it!</a></li>
+<li><a class="reference internal" href="#my-vim-statusline-has-a-lot-of-or-underline-characters-in-it" id="id9">My vim statusline has a lot of <tt class="docutils literal"><span class="pre">^</span></tt> or underline characters in it!</a></li>
+<li><a class="reference internal" href="#my-vim-statusline-is-hidden-only-appears-in-split-windows" id="id10">My vim statusline is hidden/only appears in split windows!</a></li>
+</ul>
+</div>
+<div class="section" id="i-can-t-see-any-fancy-symbols-what-s-wrong">
+<h3><a class="toc-backref" href="#id2">I can&#8217;t see any fancy symbols, what&#8217;s wrong?</a><a class="headerlink" href="#i-can-t-see-any-fancy-symbols-what-s-wrong" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>If you&#8217;re using iTerm2, please update to <a class="reference external" href="https://github.com/gnachman/iTerm2/commit/8e3ad6dabf83c60b8cf4a3e3327c596401744af6">this revision</a>
+or newer.</li>
+<li>You need to set your <tt class="docutils literal"><span class="pre">LANG</span></tt> and <tt class="docutils literal"><span class="pre">LC_*</span></tt> environment variables to
+a UTF-8 locale (e.g. <tt class="docutils literal"><span class="pre">LANG=en_US.utf8</span></tt>). Consult your Linux distro&#8217;s
+documentation for information about setting these variables correctly.</li>
+</ul>
+</div>
+<div class="section" id="the-colors-look-weird-in-the-default-os-x-terminal-app">
+<h3><a class="toc-backref" href="#id3">The colors look weird in the default OS X Terminal app!</a><a class="headerlink" href="#the-colors-look-weird-in-the-default-os-x-terminal-app" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The arrows may have the wrong colors if you have changed the &#8220;minimum
+contrast&#8221; slider in the color tab of  your OS X settings.</li>
+<li>The default OS X Terminal app is known to have some issues with the
+Powerline colors. Please use another terminal emulator. iTerm2 should work
+fine.</li>
+</ul>
+</div>
+<div class="section" id="the-colors-look-weird-in-iterm2">
+<h3><a class="toc-backref" href="#id4">The colors look weird in iTerm2!</a><a class="headerlink" href="#the-colors-look-weird-in-iterm2" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The arrows may have the wrong colors if you have changed the &#8220;minimum
+contrast&#8221; slider in the color tab of  your OS X settings.</li>
+<li>Please disable background transparency to resolve this issue.</li>
+</ul>
+</div>
+<div class="section" id="i-receive-a-nameerror-when-trying-to-use-powerline-with-macvim">
+<h3><a class="toc-backref" href="#id5">I receive a <tt class="docutils literal"><span class="pre">NameError</span></tt> when trying to use Powerline with MacVim!</a><a class="headerlink" href="#i-receive-a-nameerror-when-trying-to-use-powerline-with-macvim" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">Please install MacVim using this command:</p>
+<div class="highlight-python"><pre>brew install macvim --env-std --override-system-vim</pre>
+</div>
+<p>Then install Powerline locally with <tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--user</span></tt>, or by
+running these commands in the <tt class="docutils literal"><span class="pre">powerline</span></tt> directory:</p>
+<div class="highlight-python"><pre>./setup.py build
+./setup.py install --user</pre>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="i-receive-an-importerror-when-trying-to-use-powerline-on-os-x">
+<h3><a class="toc-backref" href="#id6">I receive an <tt class="docutils literal"><span class="pre">ImportError</span></tt> when trying to use Powerline on OS X!</a><a class="headerlink" href="#i-receive-an-importerror-when-trying-to-use-powerline-on-os-x" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">This is caused by an invalid <tt class="docutils literal"><span class="pre">sys.path</span></tt> when using system vim and system
+Python. Please try to select another Python distribution:</p>
+<div class="highlight-python"><pre>sudo port select python python27-apple</pre>
+</div>
+</li>
+<li><p class="first">See <a class="reference external" href="https://github.com/Lokaltog/powerline/issues/39">issue #39</a> for
+a discussion and other possible solutions for this issue.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="i-m-using-tmux-and-powerline-looks-like-crap-what-s-wrong">
+<h3><a class="toc-backref" href="#id7">I&#8217;m using tmux and Powerline looks like crap, what&#8217;s wrong?</a><a class="headerlink" href="#i-m-using-tmux-and-powerline-looks-like-crap-what-s-wrong" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">You need to tell tmux that it has 256-color capabilities. Add this to your
+<tt class="file docutils literal"><span class="pre">.tmux.conf</span></tt> to solve this issue:</p>
+<div class="highlight-python"><pre>set -g default-terminal "screen-256color"</pre>
+</div>
+</li>
+<li><p class="first">If you&#8217;re using iTerm2, make sure that you have enabled the setting
+<em class="guilabel">Set locale variables automatically</em> in <em class="menuselection">Profiles
+‣ Terminal ‣ Environment</em>.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="my-vim-statusline-has-strange-characters-like-b-in-it">
+<h3><a class="toc-backref" href="#id8">My vim statusline has strange characters like <tt class="docutils literal"><span class="pre">^B</span></tt> in it!</a><a class="headerlink" href="#my-vim-statusline-has-strange-characters-like-b-in-it" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Please add <tt class="docutils literal"><span class="pre">set</span> <span class="pre">encoding=utf-8</span></tt> to your <tt class="file docutils literal"><span class="pre">vimrc</span></tt>.</li>
+</ul>
+</div>
+<div class="section" id="my-vim-statusline-has-a-lot-of-or-underline-characters-in-it">
+<h3><a class="toc-backref" href="#id9">My vim statusline has a lot of <tt class="docutils literal"><span class="pre">^</span></tt> or underline characters in it!</a><a class="headerlink" href="#my-vim-statusline-has-a-lot-of-or-underline-characters-in-it" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">You need to configure the <tt class="docutils literal"><span class="pre">fillchars</span></tt> setting to disable statusline
+fillchars (see <tt class="docutils literal"><span class="pre">:h</span> <span class="pre">fillchars</span></tt> for details). Add this to your
+<tt class="file docutils literal"><span class="pre">vimrc</span></tt> to solve this issue:</p>
+<blockquote>
+<div><div class="highlight-vim"><div class="highlight"><pre><span class="k">set</span> <span class="nb">fillchars</span><span class="p">+=</span><span class="nb">stl</span>:\ <span class="p">,</span>stlnc:\
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="my-vim-statusline-is-hidden-only-appears-in-split-windows">
+<h3><a class="toc-backref" href="#id10">My vim statusline is hidden/only appears in split windows!</a><a class="headerlink" href="#my-vim-statusline-is-hidden-only-appears-in-split-windows" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Make sure that you have <tt class="docutils literal"><span class="pre">set</span> <span class="pre">laststatus=2</span></tt> in your <tt class="file docutils literal"><span class="pre">vimrc</span></tt>.</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Installation on OS X</a><ul>
+<li><a class="reference internal" href="#plugin-installation">Plugin installation</a></li>
+<li><a class="reference internal" href="#font-installation">Font installation</a></li>
+<li><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/installation/osx.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="../index.html">Powerline beta documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright Kim Silkebækken.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

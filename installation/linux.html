@@ -1,0 +1,303 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Installation on Linux &mdash; Powerline beta documentation</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'beta',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Powerline beta documentation" href="../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="../index.html">Powerline beta documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="installation-on-linux">
+<span id="installation-linux"></span><h1>Installation on Linux<a class="headerlink" href="#installation-on-linux" title="Permalink to this headline">¶</a></h1>
+<p>The following distribution-specific packages are officially supported, and
+they provide an easy way of installing and upgrading Powerline. The packages
+will automatically do most of the configuration for you, but you should
+still skim through this guide so you know how the plugin works.</p>
+<ul class="simple">
+<li><a class="reference external" href="https://aur.archlinux.org/packages/python2-powerline-git/">Arch Linux (AUR), Python 2 version</a></li>
+<li><a class="reference external" href="https://aur.archlinux.org/packages/python-powerline-git/">Arch Linux (AUR), Python 3 version</a></li>
+<li>Gentoo Live ebuild (<tt class="file docutils literal"><span class="pre">packages/gentoo/app-misc/powerline/</span></tt>)</li>
+</ul>
+<p>If you&#8217;re running a distribution without an official package you&#8217;ll have to
+follow the installation guide below:</p>
+<div class="section" id="plugin-installation">
+<h2>Plugin installation<a class="headerlink" href="#plugin-installation" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Install Python 3.3+ or Python 2.7.</p>
+</li>
+<li><p class="first">Install Powerline using the following command:</p>
+<div class="highlight-python"><pre>pip install --user git+git://github.com/Lokaltog/powerline</pre>
+</div>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You need to use the GitHub URI when installing Powerline! This
+project is currently unavailable on the PyPI due to a naming conflict
+with an unrelated project.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Installing Powerline with a vim plugin manager like Vundle is
+not recommended and not officially supported.</p>
+</div>
+</div>
+<div class="section" id="font-installation">
+<h2>Font installation<a class="headerlink" href="#font-installation" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="42%" />
+<col width="32%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head" colspan="3">Application/terminal emulator font support table</th>
+</tr>
+<tr class="row-even"><th class="head">Name</th>
+<th class="head">Patched font support</th>
+<th class="head">Fontconfig support</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-odd"><td>Gnome Terminal</td>
+<td><img alt="supp_yes" src="../_images/tick.png" /></td>
+<td><img alt="supp_yes" src="../_images/tick.png" /></td>
+</tr>
+<tr class="row-even"><td>Gvim</td>
+<td><img alt="supp_yes" src="../_images/tick.png" /></td>
+<td><img alt="supp_no" src="../_images/cross.png" /></td>
+</tr>
+<tr class="row-odd"><td>Konsole</td>
+<td><img alt="supp_yes" src="../_images/tick.png" /></td>
+<td><img alt="supp_yes" src="../_images/tick.png" /></td>
+</tr>
+<tr class="row-even"><td>lxterminal</td>
+<td><img alt="supp_yes" src="../_images/tick.png" /></td>
+<td><img alt="supp_yes" src="../_images/tick.png" /></td>
+</tr>
+<tr class="row-odd"><td>rxvt-unicode</td>
+<td><img alt="supp_partial" src="../_images/error.png" /> <a class="footnote-reference" href="#id2" id="id1">[1]</a></td>
+<td><img alt="supp_no" src="../_images/cross.png" /></td>
+</tr>
+<tr class="row-even"><td>st</td>
+<td><img alt="supp_yes" src="../_images/tick.png" /></td>
+<td><img alt="supp_yes" src="../_images/tick.png" /></td>
+</tr>
+<tr class="row-odd"><td>Xfce Terminal</td>
+<td><img alt="supp_yes" src="../_images/tick.png" /></td>
+<td><img alt="supp_yes" src="../_images/tick.png" /></td>
+</tr>
+<tr class="row-even"><td>xterm</td>
+<td><img alt="supp_yes" src="../_images/tick.png" /></td>
+<td><img alt="supp_no" src="../_images/cross.png" /></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Must be compiled with <tt class="docutils literal"><span class="pre">--enable-unicode3</span></tt> for the
+patched font to work.</td></tr>
+</tbody>
+</table>
+<p>Powerline provides two ways of installing the required fonts on Linux. The
+recommended method is using <tt class="docutils literal"><span class="pre">fontconfig</span></tt> if your terminal emulator
+supports it (see the table above).</p>
+<div class="section" id="fontconfig">
+<h3>Fontconfig<a class="headerlink" href="#fontconfig" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Download the <a class="reference external" href="https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf">latest version of PowerlineSymbols</a>
+and the <a class="reference external" href="https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf">latest version of the fontconfig file</a>.</li>
+<li>Move <tt class="file docutils literal"><span class="pre">PowerlineSymbols.otf</span></tt> to <tt class="file docutils literal"><span class="pre">~/.fonts/</span></tt> (or another X font
+directory).</li>
+<li>Run <tt class="docutils literal"><span class="pre">fc-cache</span> <span class="pre">-vf</span> <span class="pre">~/.fonts</span></tt> to update your font cache.</li>
+<li>Move <tt class="file docutils literal"><span class="pre">10-powerline-symbols.conf</span></tt> to either <tt class="file docutils literal"><span class="pre">~/.fonts.conf.d/</span></tt>
+or <tt class="file docutils literal"><span class="pre">~/.config/fontconfig/conf.d/</span></tt>, depending on your fontconfig
+version.</li>
+<li>If you don&#8217;t see the arrow symbols, please close all instances of your
+terminal emulator or gvim. You may also have to restart X for the changes
+to take effect. If you <em>still</em> don&#8217;t see the arrow symbols, please submit
+an issue on GitHub.</li>
+</ol>
+</div>
+<div class="section" id="patched-font">
+<h3>Patched font<a class="headerlink" href="#patched-font" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Download the font of your choice from <a class="reference external" href="https://github.com/Lokaltog/powerline-fonts">powerline-fonts</a>. If you can&#8217;t
+find your preferred font in the <a class="reference external" href="https://github.com/Lokaltog/powerline-fonts">powerline-fonts</a> repo, you&#8217;ll have to
+patch your own font instead. See <a class="reference internal" href="../fontpatching.html#font-patching"><em>Font patching</em></a> for instructions.</li>
+<li>Move your patched font to <tt class="file docutils literal"><span class="pre">~/.fonts/</span></tt> (or another X font
+directory).</li>
+<li>Run <tt class="docutils literal"><span class="pre">fc-cache</span> <span class="pre">-vf</span> <span class="pre">~/.fonts</span></tt> to update your font cache.</li>
+<li>Update Gvim or your terminal emulator to use the patched font. (the
+correct font usually ends with <em>for Powerline</em>).</li>
+<li>If you don&#8217;t see the arrow symbols, please close all instances of your
+terminal emulator or gvim. You may also have to restart X for the changes
+to take effect. If you <em>still</em> don&#8217;t see the arrow symbols, please submit
+an issue on GitHub.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#i-can-t-see-any-fancy-symbols-what-s-wrong" id="id3">I can&#8217;t see any fancy symbols, what&#8217;s wrong?</a></li>
+<li><a class="reference internal" href="#the-fancy-symbols-look-a-bit-blurry-or-off" id="id4">The fancy symbols look a bit blurry or &#8220;off&#8221;!</a></li>
+<li><a class="reference internal" href="#i-m-using-tmux-and-powerline-looks-like-crap-what-s-wrong" id="id5">I&#8217;m using tmux and Powerline looks like crap, what&#8217;s wrong?</a></li>
+<li><a class="reference internal" href="#my-vim-statusline-has-strange-characters-like-b-in-it" id="id6">My vim statusline has strange characters like <tt class="docutils literal"><span class="pre">^B</span></tt> in it!</a></li>
+<li><a class="reference internal" href="#my-vim-statusline-has-a-lot-of-or-underline-characters-in-it" id="id7">My vim statusline has a lot of <tt class="docutils literal"><span class="pre">^</span></tt> or underline characters in it!</a></li>
+<li><a class="reference internal" href="#my-vim-statusline-is-hidden-only-appears-in-split-windows" id="id8">My vim statusline is hidden/only appears in split windows!</a></li>
+</ul>
+</div>
+<div class="section" id="i-can-t-see-any-fancy-symbols-what-s-wrong">
+<h3><a class="toc-backref" href="#id3">I can&#8217;t see any fancy symbols, what&#8217;s wrong?</a><a class="headerlink" href="#i-can-t-see-any-fancy-symbols-what-s-wrong" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Make sure that you&#8217;ve configured gvim or your terminal emulator to use
+a patched font (see <a class="reference internal" href="../fontpatching.html#font-patching"><em>Font patching</em></a>).</li>
+<li>You need to set your <tt class="docutils literal"><span class="pre">LANG</span></tt> and <tt class="docutils literal"><span class="pre">LC_*</span></tt> environment variables to
+a UTF-8 locale (e.g. <tt class="docutils literal"><span class="pre">LANG=en_US.utf8</span></tt>). Consult your Linux distro&#8217;s
+documentation for information about setting these variables correctly.</li>
+<li>Make sure that vim is compiled with the <tt class="docutils literal"><span class="pre">--with-features=big</span></tt> flag.</li>
+<li>If you&#8217;re using rxvt-unicode, make sure that it&#8217;s compiled with the
+<tt class="docutils literal"><span class="pre">--enable-unicode3</span></tt> flag.</li>
+</ul>
+</div>
+<div class="section" id="the-fancy-symbols-look-a-bit-blurry-or-off">
+<h3><a class="toc-backref" href="#id4">The fancy symbols look a bit blurry or &#8220;off&#8221;!</a><a class="headerlink" href="#the-fancy-symbols-look-a-bit-blurry-or-off" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Make sure that you have patched all variants of your font (i.e. both the
+regular and the bold font files).</li>
+</ul>
+</div>
+<div class="section" id="i-m-using-tmux-and-powerline-looks-like-crap-what-s-wrong">
+<h3><a class="toc-backref" href="#id5">I&#8217;m using tmux and Powerline looks like crap, what&#8217;s wrong?</a><a class="headerlink" href="#i-m-using-tmux-and-powerline-looks-like-crap-what-s-wrong" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">You need to tell tmux that it has 256-color capabilities. Add this to your
+<tt class="file docutils literal"><span class="pre">.tmux.conf</span></tt> to solve this issue:</p>
+<div class="highlight-python"><pre>set -g default-terminal "screen-256color"</pre>
+</div>
+</li>
+<li><p class="first">If you&#8217;re using iTerm2, make sure that you have enabled the setting
+<em class="guilabel">Set locale variables automatically</em> in <em class="menuselection">Profiles
+‣ Terminal ‣ Environment</em>.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="my-vim-statusline-has-strange-characters-like-b-in-it">
+<h3><a class="toc-backref" href="#id6">My vim statusline has strange characters like <tt class="docutils literal"><span class="pre">^B</span></tt> in it!</a><a class="headerlink" href="#my-vim-statusline-has-strange-characters-like-b-in-it" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Please add <tt class="docutils literal"><span class="pre">set</span> <span class="pre">encoding=utf-8</span></tt> to your <tt class="file docutils literal"><span class="pre">vimrc</span></tt>.</li>
+</ul>
+</div>
+<div class="section" id="my-vim-statusline-has-a-lot-of-or-underline-characters-in-it">
+<h3><a class="toc-backref" href="#id7">My vim statusline has a lot of <tt class="docutils literal"><span class="pre">^</span></tt> or underline characters in it!</a><a class="headerlink" href="#my-vim-statusline-has-a-lot-of-or-underline-characters-in-it" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">You need to configure the <tt class="docutils literal"><span class="pre">fillchars</span></tt> setting to disable statusline
+fillchars (see <tt class="docutils literal"><span class="pre">:h</span> <span class="pre">fillchars</span></tt> for details). Add this to your
+<tt class="file docutils literal"><span class="pre">vimrc</span></tt> to solve this issue:</p>
+<blockquote>
+<div><div class="highlight-vim"><div class="highlight"><pre><span class="k">set</span> <span class="nb">fillchars</span><span class="p">+=</span><span class="nb">stl</span>:\ <span class="p">,</span>stlnc:\
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="my-vim-statusline-is-hidden-only-appears-in-split-windows">
+<h3><a class="toc-backref" href="#id8">My vim statusline is hidden/only appears in split windows!</a><a class="headerlink" href="#my-vim-statusline-is-hidden-only-appears-in-split-windows" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Make sure that you have <tt class="docutils literal"><span class="pre">set</span> <span class="pre">laststatus=2</span></tt> in your <tt class="file docutils literal"><span class="pre">vimrc</span></tt>.</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Installation on Linux</a><ul>
+<li><a class="reference internal" href="#plugin-installation">Plugin installation</a></li>
+<li><a class="reference internal" href="#font-installation">Font installation</a></li>
+<li><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/installation/linux.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="../index.html">Powerline beta documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright Kim Silkebækken.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>
