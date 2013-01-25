@@ -102,7 +102,11 @@ colorschemes.</p>
 <h3>Common configuration<a class="headerlink" href="#common-configuration" title="Permalink to this headline">¶</a></h3>
 <p>Common configuration is a subdictionary that is a value of <tt class="docutils literal"><span class="pre">common</span></tt> key in
 <tt class="file docutils literal"><span class="pre">powerline/config.json</span></tt> file.</p>
-<dl class="docutils">
+<dl class="docutils" id="config-term-24bit-colors">
+<dt><tt class="docutils literal"><span class="pre">term_24bit_colors</span></tt></dt>
+<dd>Defines whether to output cterm indices (8-bit) or RGB colors (24-bit)
+to the terminal emulator. See the <a class="reference internal" href="overview.html#term-feature-support-matrix"><em>Application/terminal emulator feature support matrix</em></a> for
+information on whether your terminal emulator supports 24-bit colors.</dd>
 <dt><tt class="docutils literal"><span class="pre">dividers</span></tt></dt>
 <dd><p class="first">Defines the dividers used in all Powerline extensions. This option
 should usually only be changed if you don&#8217;t have a patched font, or if
@@ -111,11 +115,12 @@ you use a font patched with the legacy font patcher.</p>
 background colors, while the <tt class="docutils literal"><span class="pre">soft</span></tt> dividers are used to divide
 segments with the same background color.</p>
 </dd>
+</dl>
+<dl class="docutils" id="config-common-paths">
 <dt><tt class="docutils literal"><span class="pre">paths</span></tt></dt>
-<dd><p class="first last" id="config-common-paths">Defines additional paths which will be searched for modules when using
-<a class="reference internal" href="#config-themes-seg-module"><em>module segment option</em></a>. Paths defined here
-have priority when searching for modules.</p>
-</dd>
+<dd>Defines additional paths which will be searched for modules when using
+<a class="reference internal" href="#config-themes-seg-module"><em>module segment option</em></a>. Paths defined
+here have priority when searching for modules.</dd>
 </dl>
 </div>
 <div class="section" id="extension-specific-configuration">
@@ -146,18 +151,22 @@ buffer-specific statuslines in vim. Requires a custom matcher and theme.</dd>
 <dl class="docutils">
 <dt><tt class="docutils literal"><span class="pre">name</span></tt></dt>
 <dd>Name of the colorscheme.</dd>
+</dl>
+<dl class="docutils" id="config-colorscheme-colors">
 <dt><tt class="docutils literal"><span class="pre">colors</span></tt></dt>
-<dd><p class="first" id="config-colorscheme-colors">Color definitions, consisting of a dict where the key is the name of the
+<dd><p class="first">Color definitions, consisting of a dict where the key is the name of the
 color, and the value is one of the following:</p>
 <ul class="last simple">
 <li>A cterm color index.</li>
-<li>A list of two integers, where the first integer is a cterm color
-index, and the second is an RGB/hex color. This is useful for
-colorschemes that use colors that aren&#8217;t available in color terminals.</li>
+<li>A list with a cterm color index and a hex color string (e.g. <tt class="docutils literal"><span class="pre">[123,</span>
+<span class="pre">&quot;aabbcc&quot;]</span></tt>). This is useful for colorschemes that use colors that
+aren&#8217;t available in color terminals.</li>
 </ul>
 </dd>
+</dl>
+<dl class="docutils" id="config-colorscheme-groups">
 <dt><tt class="docutils literal"><span class="pre">groups</span></tt></dt>
-<dd><p class="first" id="config-colorscheme-groups">Segment highlighting groups, consisting of a dict where the key is the
+<dd><p class="first">Segment highlighting groups, consisting of a dict where the key is the
 name of the highlighting group (usually the function name for function
 segments), and the value is a dict that defines the foreground color,
 background color and optional attributes:</p>
@@ -202,9 +211,10 @@ defined in <a class="reference internal" href="#config-colorscheme-colors"><em>c
 <dl class="docutils">
 <dt><tt class="docutils literal"><span class="pre">name</span></tt></dt>
 <dd>Name of the theme.</dd>
+</dl>
+<dl class="docutils" id="config-themes-default-module">
 <dt><tt class="docutils literal"><span class="pre">default_module</span></tt></dt>
-<dd><p class="first last" id="config-themes-default-module">Python module where segments will be looked by default.</p>
-</dd>
+<dd>Python module where segments will be looked by default.</dd>
 <dt><tt class="docutils literal"><span class="pre">segments</span></tt></dt>
 <dd><p class="first">A dict with a <tt class="docutils literal"><span class="pre">left</span></tt> and a <tt class="docutils literal"><span class="pre">right</span></tt> list, consisting of segment
 dicts. Each segment has the following options:</p>
@@ -230,7 +240,7 @@ option</em></a>.</dd>
 </dd>
 <dt><tt class="docutils literal"><span class="pre">module</span></tt></dt>
 <dd><p class="first last" id="config-themes-seg-module">Function module, only required for function segments. Defaults to
-<tt class="docutils literal"><span class="pre">powerline.ext.{extension}.segments</span></tt>. Default is overriden by
+<tt class="docutils literal"><span class="pre">powerline.segments.{extension}</span></tt>. Default is overriden by
 <a class="reference internal" href="#config-themes-default-module"><em>default_module theme option</em></a>.</p>
 </dd>
 <dt><tt class="docutils literal"><span class="pre">name</span></tt></dt>

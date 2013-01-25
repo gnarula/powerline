@@ -55,10 +55,6 @@
 <div class="section" id="requirements">
 <h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
 <p>Powerline requires Python 3.3 or Python 2.7 to work.</p>
-<p>Powerline uses several special glyphs to get the arrow effect and some
-custom symbols for developers. This requires that you either have the symbol
-font or a patched font on your system (details in installation
-instructions).</p>
 <div class="section" id="vim-plugin-requirements">
 <h3>Vim plugin requirements<a class="headerlink" href="#vim-plugin-requirements" title="Permalink to this headline">¶</a></h3>
 <p>The vim plugin requires a vim version with Python support compiled in.  You
@@ -71,6 +67,114 @@ Python headers to be installed on your system. Please consult your
 distribution&#8217;s documentation for details on how to compile and install
 packages.</p>
 <p>Vim version 7.3.661 or newer is recommended for performance reasons.</p>
+</div>
+<div class="section" id="terminal-emulator-requirements">
+<h3>Terminal emulator requirements<a class="headerlink" href="#terminal-emulator-requirements" title="Permalink to this headline">¶</a></h3>
+<p>Powerline uses several special glyphs to get the arrow effect and some
+custom symbols for developers. This requires that you either have a symbol
+font or a patched font on your system. Your terminal emulator must also
+support either patched fonts or fontconfig for Powerline to work properly.</p>
+<p>You can also enable <a class="reference internal" href="configuration.html#config-term-24bit-colors"><em>24-bit color support</em></a>
+if your terminal emulator supports it.</p>
+<table border="1" class="docutils" id="term-feature-support-matrix">
+<caption>Application/terminal emulator feature support matrix</caption>
+<colgroup>
+<col width="23%" />
+<col width="8%" />
+<col width="23%" />
+<col width="23%" />
+<col width="23%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">OS</th>
+<th class="head">Patched font support</th>
+<th class="head">Fontconfig support</th>
+<th class="head">24-bit color support</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Gnome Terminal</td>
+<td>Linux</td>
+<td><img alt="i_yes" src="_images/tick.png" /></td>
+<td><img alt="i_yes" src="_images/tick.png" /></td>
+<td><img alt="i_no" src="_images/cross.png" /></td>
+</tr>
+<tr class="row-odd"><td>Gvim</td>
+<td>Linux</td>
+<td><img alt="i_yes" src="_images/tick.png" /></td>
+<td><img alt="i_no" src="_images/cross.png" /></td>
+<td><img alt="i_yes" src="_images/tick.png" /></td>
+</tr>
+<tr class="row-even"><td>iTerm2</td>
+<td>OS X</td>
+<td><img alt="i_yes" src="_images/tick.png" /></td>
+<td><img alt="i_no" src="_images/cross.png" /></td>
+<td><img alt="i_no" src="_images/cross.png" /></td>
+</tr>
+<tr class="row-odd"><td>Konsole</td>
+<td>Linux</td>
+<td><img alt="i_yes" src="_images/tick.png" /></td>
+<td><img alt="i_yes" src="_images/tick.png" /></td>
+<td><img alt="i_yes" src="_images/tick.png" /></td>
+</tr>
+<tr class="row-even"><td>lxterminal</td>
+<td>Linux</td>
+<td><img alt="i_yes" src="_images/tick.png" /></td>
+<td><img alt="i_yes" src="_images/tick.png" /></td>
+<td><img alt="i_no" src="_images/cross.png" /></td>
+</tr>
+<tr class="row-odd"><td>MacVim</td>
+<td>OS X</td>
+<td><img alt="i_yes" src="_images/tick.png" /></td>
+<td><img alt="i_no" src="_images/cross.png" /></td>
+<td><img alt="i_yes" src="_images/tick.png" /></td>
+</tr>
+<tr class="row-even"><td>rxvt-unicode</td>
+<td>Linux</td>
+<td><img alt="i_partial" src="_images/error.png" /> <a class="footnote-reference" href="#id3" id="id1">[1]</a></td>
+<td><img alt="i_no" src="_images/cross.png" /></td>
+<td><img alt="i_no" src="_images/cross.png" /></td>
+</tr>
+<tr class="row-odd"><td>st</td>
+<td>Linux</td>
+<td><img alt="i_yes" src="_images/tick.png" /></td>
+<td><img alt="i_yes" src="_images/tick.png" /></td>
+<td><img alt="i_no" src="_images/cross.png" /></td>
+</tr>
+<tr class="row-even"><td>Terminal.app</td>
+<td>OS X</td>
+<td><img alt="i_yes" src="_images/tick.png" /></td>
+<td><img alt="i_no" src="_images/cross.png" /></td>
+<td><img alt="i_no" src="_images/cross.png" /></td>
+</tr>
+<tr class="row-odd"><td>Xfce Terminal</td>
+<td>Linux</td>
+<td><img alt="i_yes" src="_images/tick.png" /></td>
+<td><img alt="i_yes" src="_images/tick.png" /></td>
+<td><img alt="i_no" src="_images/cross.png" /></td>
+</tr>
+<tr class="row-even"><td>xterm</td>
+<td>Linux</td>
+<td><img alt="i_yes" src="_images/tick.png" /></td>
+<td><img alt="i_no" src="_images/cross.png" /></td>
+<td><img alt="i_partial" src="_images/error.png" /> <a class="footnote-reference" href="#id4" id="id2">[2]</a></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id3" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Must be compiled with <tt class="docutils literal"><span class="pre">--enable-unicode3</span></tt> for the
+patched font to work.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id4" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>Uses nearest color from 8-bit palette.</td></tr>
+</tbody>
+</table>
 </div>
 <div class="section" id="optional-dependencies">
 <h3>Optional dependencies<a class="headerlink" href="#optional-dependencies" title="Permalink to this headline">¶</a></h3>
@@ -150,6 +254,7 @@ absolute path to your Powerline installation directory:</p>
 <li><a class="reference internal" href="#">Overview</a><ul>
 <li><a class="reference internal" href="#requirements">Requirements</a><ul>
 <li><a class="reference internal" href="#vim-plugin-requirements">Vim plugin requirements</a></li>
+<li><a class="reference internal" href="#terminal-emulator-requirements">Terminal emulator requirements</a></li>
 <li><a class="reference internal" href="#optional-dependencies">Optional dependencies</a></li>
 </ul>
 </li>

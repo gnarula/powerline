@@ -79,65 +79,10 @@ not recommended and not officially supported.</p>
 </div>
 <div class="section" id="font-installation">
 <h2>Font installation<a class="headerlink" href="#font-installation" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="docutils">
-<colgroup>
-<col width="26%" />
-<col width="42%" />
-<col width="32%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head" colspan="3">Application/terminal emulator font support table</th>
-</tr>
-<tr class="row-even"><th class="head">Name</th>
-<th class="head">Patched font support</th>
-<th class="head">Fontconfig support</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-odd"><td>Gnome Terminal</td>
-<td><img alt="supp_yes" src="../_images/tick.png" /></td>
-<td><img alt="supp_yes" src="../_images/tick.png" /></td>
-</tr>
-<tr class="row-even"><td>Gvim</td>
-<td><img alt="supp_yes" src="../_images/tick.png" /></td>
-<td><img alt="supp_no" src="../_images/cross.png" /></td>
-</tr>
-<tr class="row-odd"><td>Konsole</td>
-<td><img alt="supp_yes" src="../_images/tick.png" /></td>
-<td><img alt="supp_yes" src="../_images/tick.png" /></td>
-</tr>
-<tr class="row-even"><td>lxterminal</td>
-<td><img alt="supp_yes" src="../_images/tick.png" /></td>
-<td><img alt="supp_yes" src="../_images/tick.png" /></td>
-</tr>
-<tr class="row-odd"><td>rxvt-unicode</td>
-<td><img alt="supp_partial" src="../_images/error.png" /> <a class="footnote-reference" href="#id2" id="id1">[1]</a></td>
-<td><img alt="supp_no" src="../_images/cross.png" /></td>
-</tr>
-<tr class="row-even"><td>st</td>
-<td><img alt="supp_yes" src="../_images/tick.png" /></td>
-<td><img alt="supp_yes" src="../_images/tick.png" /></td>
-</tr>
-<tr class="row-odd"><td>Xfce Terminal</td>
-<td><img alt="supp_yes" src="../_images/tick.png" /></td>
-<td><img alt="supp_yes" src="../_images/tick.png" /></td>
-</tr>
-<tr class="row-even"><td>xterm</td>
-<td><img alt="supp_yes" src="../_images/tick.png" /></td>
-<td><img alt="supp_no" src="../_images/cross.png" /></td>
-</tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id2" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Must be compiled with <tt class="docutils literal"><span class="pre">--enable-unicode3</span></tt> for the
-patched font to work.</td></tr>
-</tbody>
-</table>
 <p>Powerline provides two ways of installing the required fonts on Linux. The
 recommended method is using <tt class="docutils literal"><span class="pre">fontconfig</span></tt> if your terminal emulator
-supports it (see the table above).</p>
+supports it. See the <a class="reference internal" href="../overview.html#term-feature-support-matrix"><em>Application/terminal emulator feature support matrix</em></a> for details about
+what features your terminal emulator supports.</p>
 <div class="section" id="fontconfig">
 <h3>Fontconfig<a class="headerlink" href="#fontconfig" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
@@ -177,16 +122,16 @@ an issue on GitHub.</li>
 <h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#i-can-t-see-any-fancy-symbols-what-s-wrong" id="id3">I can&#8217;t see any fancy symbols, what&#8217;s wrong?</a></li>
-<li><a class="reference internal" href="#the-fancy-symbols-look-a-bit-blurry-or-off" id="id4">The fancy symbols look a bit blurry or &#8220;off&#8221;!</a></li>
-<li><a class="reference internal" href="#i-m-using-tmux-and-powerline-looks-like-crap-what-s-wrong" id="id5">I&#8217;m using tmux and Powerline looks like crap, what&#8217;s wrong?</a></li>
-<li><a class="reference internal" href="#my-vim-statusline-has-strange-characters-like-b-in-it" id="id6">My vim statusline has strange characters like <tt class="docutils literal"><span class="pre">^B</span></tt> in it!</a></li>
-<li><a class="reference internal" href="#my-vim-statusline-has-a-lot-of-or-underline-characters-in-it" id="id7">My vim statusline has a lot of <tt class="docutils literal"><span class="pre">^</span></tt> or underline characters in it!</a></li>
-<li><a class="reference internal" href="#my-vim-statusline-is-hidden-only-appears-in-split-windows" id="id8">My vim statusline is hidden/only appears in split windows!</a></li>
+<li><a class="reference internal" href="#i-can-t-see-any-fancy-symbols-what-s-wrong" id="id1">I can&#8217;t see any fancy symbols, what&#8217;s wrong?</a></li>
+<li><a class="reference internal" href="#the-fancy-symbols-look-a-bit-blurry-or-off" id="id2">The fancy symbols look a bit blurry or &#8220;off&#8221;!</a></li>
+<li><a class="reference internal" href="#i-m-using-tmux-and-powerline-looks-like-crap-what-s-wrong" id="id3">I&#8217;m using tmux and Powerline looks like crap, what&#8217;s wrong?</a></li>
+<li><a class="reference internal" href="#my-vim-statusline-has-strange-characters-like-b-in-it" id="id4">My vim statusline has strange characters like <tt class="docutils literal"><span class="pre">^B</span></tt> in it!</a></li>
+<li><a class="reference internal" href="#my-vim-statusline-has-a-lot-of-or-underline-characters-in-it" id="id5">My vim statusline has a lot of <tt class="docutils literal"><span class="pre">^</span></tt> or underline characters in it!</a></li>
+<li><a class="reference internal" href="#my-vim-statusline-is-hidden-only-appears-in-split-windows" id="id6">My vim statusline is hidden/only appears in split windows!</a></li>
 </ul>
 </div>
 <div class="section" id="i-can-t-see-any-fancy-symbols-what-s-wrong">
-<h3><a class="toc-backref" href="#id3">I can&#8217;t see any fancy symbols, what&#8217;s wrong?</a><a class="headerlink" href="#i-can-t-see-any-fancy-symbols-what-s-wrong" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id1">I can&#8217;t see any fancy symbols, what&#8217;s wrong?</a><a class="headerlink" href="#i-can-t-see-any-fancy-symbols-what-s-wrong" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Make sure that you&#8217;ve configured gvim or your terminal emulator to use
 a patched font (see <a class="reference internal" href="../fontpatching.html#font-patching"><em>Font patching</em></a>).</li>
@@ -199,14 +144,14 @@ documentation for information about setting these variables correctly.</li>
 </ul>
 </div>
 <div class="section" id="the-fancy-symbols-look-a-bit-blurry-or-off">
-<h3><a class="toc-backref" href="#id4">The fancy symbols look a bit blurry or &#8220;off&#8221;!</a><a class="headerlink" href="#the-fancy-symbols-look-a-bit-blurry-or-off" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id2">The fancy symbols look a bit blurry or &#8220;off&#8221;!</a><a class="headerlink" href="#the-fancy-symbols-look-a-bit-blurry-or-off" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Make sure that you have patched all variants of your font (i.e. both the
 regular and the bold font files).</li>
 </ul>
 </div>
 <div class="section" id="i-m-using-tmux-and-powerline-looks-like-crap-what-s-wrong">
-<h3><a class="toc-backref" href="#id5">I&#8217;m using tmux and Powerline looks like crap, what&#8217;s wrong?</a><a class="headerlink" href="#i-m-using-tmux-and-powerline-looks-like-crap-what-s-wrong" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id3">I&#8217;m using tmux and Powerline looks like crap, what&#8217;s wrong?</a><a class="headerlink" href="#i-m-using-tmux-and-powerline-looks-like-crap-what-s-wrong" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p class="first">You need to tell tmux that it has 256-color capabilities. Add this to your
 <tt class="file docutils literal"><span class="pre">.tmux.conf</span></tt> to solve this issue:</p>
@@ -220,13 +165,13 @@ regular and the bold font files).</li>
 </ul>
 </div>
 <div class="section" id="my-vim-statusline-has-strange-characters-like-b-in-it">
-<h3><a class="toc-backref" href="#id6">My vim statusline has strange characters like <tt class="docutils literal"><span class="pre">^B</span></tt> in it!</a><a class="headerlink" href="#my-vim-statusline-has-strange-characters-like-b-in-it" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id4">My vim statusline has strange characters like <tt class="docutils literal"><span class="pre">^B</span></tt> in it!</a><a class="headerlink" href="#my-vim-statusline-has-strange-characters-like-b-in-it" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Please add <tt class="docutils literal"><span class="pre">set</span> <span class="pre">encoding=utf-8</span></tt> to your <tt class="file docutils literal"><span class="pre">vimrc</span></tt>.</li>
 </ul>
 </div>
 <div class="section" id="my-vim-statusline-has-a-lot-of-or-underline-characters-in-it">
-<h3><a class="toc-backref" href="#id7">My vim statusline has a lot of <tt class="docutils literal"><span class="pre">^</span></tt> or underline characters in it!</a><a class="headerlink" href="#my-vim-statusline-has-a-lot-of-or-underline-characters-in-it" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id5">My vim statusline has a lot of <tt class="docutils literal"><span class="pre">^</span></tt> or underline characters in it!</a><a class="headerlink" href="#my-vim-statusline-has-a-lot-of-or-underline-characters-in-it" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p class="first">You need to configure the <tt class="docutils literal"><span class="pre">fillchars</span></tt> setting to disable statusline
 fillchars (see <tt class="docutils literal"><span class="pre">:h</span> <span class="pre">fillchars</span></tt> for details). Add this to your
@@ -240,7 +185,7 @@ fillchars (see <tt class="docutils literal"><span class="pre">:h</span> <span cl
 </ul>
 </div>
 <div class="section" id="my-vim-statusline-is-hidden-only-appears-in-split-windows">
-<h3><a class="toc-backref" href="#id8">My vim statusline is hidden/only appears in split windows!</a><a class="headerlink" href="#my-vim-statusline-is-hidden-only-appears-in-split-windows" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id6">My vim statusline is hidden/only appears in split windows!</a><a class="headerlink" href="#my-vim-statusline-is-hidden-only-appears-in-split-windows" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Make sure that you have <tt class="docutils literal"><span class="pre">set</span> <span class="pre">laststatus=2</span></tt> in your <tt class="file docutils literal"><span class="pre">vimrc</span></tt>.</li>
 </ul>
