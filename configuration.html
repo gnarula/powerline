@@ -52,6 +52,12 @@
             
   <div class="section" id="configuration">
 <h1>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>You DO NOT have to fork the main GitHub repo to personalize your
+Powerline configuration!</strong> Please read through the <a class="reference internal" href="#quick-guide"><em>Quick setup guide</em></a> for
+a quick introduction to user configuration.</p>
+</div>
 <p>Powerline is configured with one main configuration file, and with separate
 configuration files for themes and colorschemes. All configuration files are
 written in JSON, with the exception of segment definitions, which are
@@ -61,7 +67,7 @@ written in Python.</p>
 <dt><a class="reference internal" href="#main-configuration">Main configuration</a></dt>
 <dd><tt class="file docutils literal"><span class="pre">powerline/config.json</span></tt></dd>
 <dt><a class="reference internal" href="#colorschemes">Colorschemes</a></dt>
-<dd><tt class="file docutils literal"><span class="pre">powerline/colorschemes/default.json</span></tt></dd>
+<dd><tt class="file docutils literal"><span class="pre">powerline/colorschemes/</span><em><span class="pre">extension</span></em><span class="pre">/default.json</span></tt></dd>
 <dt><a class="reference internal" href="#themes">Themes</a></dt>
 <dd><tt class="file docutils literal"><span class="pre">powerline/themes/</span><em><span class="pre">extension</span></em><span class="pre">/default.json</span></tt></dd>
 </dl>
@@ -69,21 +75,68 @@ written in Python.</p>
 configuration files are stored in <tt class="file docutils literal"><span class="pre">$XDG_CONFIG_HOME/powerline</span></tt> for
 Linux users, and in <tt class="file docutils literal"><span class="pre">~/.config/powerline</span></tt> for OS X users. This usually
 corresponds to <tt class="file docutils literal"><span class="pre">~/.config/powerline</span></tt> on both platforms.</p>
-<p>The easiest way of creating your own version of any configuration file is to
-copy the configuration file from the main package to the corresponding path
-in your user-specific config directory and make your changes to the new
-file. Example:</p>
-<div class="highlight-sh"><div class="highlight"><pre><span class="nv">$ </span>cp /path/to/powerline/colorschemes/default.json <span class="se">\</span>
-    ~/.config/powerline/colorschemes/mycolorscheme.json
-
-<span class="nv">$ </span>vim ~/.config/powerline/colorschemes/mycolorscheme.json
+<div class="section" id="quick-setup-guide">
+<span id="quick-guide"></span><h2>Quick setup guide<a class="headerlink" href="#quick-setup-guide" title="Permalink to this headline">¶</a></h2>
+<p>This guide will help you with the initial configuration of Powerline.</p>
+<p>Start by copying the entire set of default configuration files to the
+corresponding path in your user config directory:</p>
+<div class="highlight-sh"><div class="highlight"><pre>mkdir ~/.config/powerline
+cp -R /path/to/powerline/config_files/* ~/.config/powerline
 </pre></div>
 </div>
+<p>Each extension (vim, tmux, etc.) has its own theme, and they are located in
+<tt class="file docutils literal"><em><span class="pre">config</span> <span class="pre">directory</span></em><span class="pre">/themes/</span><em><span class="pre">extension</span></em><span class="pre">/default.json</span></tt>.</p>
+<p>If you want to move, remove or customize any of the provided segments, you
+can do that by updating the segment dictionary in the theme you want to
+customize. A segment dictionary looks like this:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;segment_name&quot;</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>You can move the segment dictionaries around to change the segment
+positions, or remove the entire dictionary to remove the segment from the
+prompt or statusline.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">If you&#8217;re creating a custom colorscheme or theme, remember to
-rename it and update your main configuration to use the new
-colorscheme/theme!</p>
+<p class="last">It&#8217;s essential that the contents of all your configuration files
+is valid JSON! It&#8217;s strongly recommended that you run your configuration
+files through <tt class="docutils literal"><span class="pre">jsonlint</span></tt> after changing them.</p>
+</div>
+<p>Some segments need a user configuration to work properly. Here&#8217;s a couple of
+segments that you may want to customize right away:</p>
+<dl class="docutils">
+<dt><strong>E-mail alert segment</strong></dt>
+<dd><p class="first">You have to set your username and password (and possibly server/port)
+for the e-mail alert segment. If you&#8217;re using GMail it&#8217;s recommended
+that you <a class="reference external" href="https://accounts.google.com/IssuedAuthSubTokens">generate an application-specific password</a> for this purpose.</p>
+<p class="last">Open a theme file, scroll down to the <tt class="docutils literal"><span class="pre">email_imap_alert</span></tt> segment and
+set your <tt class="docutils literal"><span class="pre">username</span></tt> and <tt class="docutils literal"><span class="pre">password</span></tt>.  The server defaults to GMail&#8217;s
+IMAP server, but you can set the server/port by adding a <tt class="docutils literal"><span class="pre">server</span></tt> and
+a <tt class="docutils literal"><span class="pre">port</span></tt> argument.</p>
+</dd>
+<dt><strong>Weather segment</strong></dt>
+<dd><p class="first">The weather segment will try to find your location using a GeoIP lookup,
+so unless you&#8217;re on a VPN you probably won&#8217;t have to change the location
+query.</p>
+<p>If you want to change the location query or the temperature unit you&#8217;ll
+have to update the segment arguments. Open a theme file, scroll down to
+the weather segment and update it to include unit/location query
+arguments:</p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;weather&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;priority&quot;</span><span class="o">:</span> <span class="mi">50</span><span class="p">,</span>
+    <span class="s2">&quot;divider_highlight_group&quot;</span><span class="o">:</span> <span class="s2">&quot;background:divider&quot;</span>
+    <span class="s2">&quot;args&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;unit&quot;</span><span class="o">:</span> <span class="s2">&quot;f&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;location_query&quot;</span><span class="o">:</span> <span class="s2">&quot;oslo, norway&quot;</span>
+    <span class="p">}</span>
+<span class="p">},</span>
+</pre></div>
+</div>
+</dd>
+</dl>
 </div>
 <div class="section" id="main-configuration">
 <h2>Main configuration<a class="headerlink" href="#main-configuration" title="Permalink to this headline">¶</a></h2>
@@ -321,6 +374,7 @@ highlighting group depending on the segment contents.</li>
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Configuration</a><ul>
+<li><a class="reference internal" href="#quick-setup-guide">Quick setup guide</a></li>
 <li><a class="reference internal" href="#main-configuration">Main configuration</a><ul>
 <li><a class="reference internal" href="#common-configuration">Common configuration</a></li>
 <li><a class="reference internal" href="#extension-specific-configuration">Extension-specific configuration</a></li>

@@ -262,6 +262,28 @@ file in the profile you are using:</p>
 tested (not installable by pip).</p>
 </div>
 </div>
+<div class="section" id="awesome-widget">
+<h3>Awesome widget<a class="headerlink" href="#awesome-widget" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Powerline currently only supports awesome 3.5.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The Powerline widget will spawn a shell script that runs in the
+background and updates the statusline with <tt class="docutils literal"><span class="pre">awesome-client</span></tt>.</p>
+</div>
+<p>Add the following to your <tt class="file docutils literal"><span class="pre">rc.lua</span></tt>, where <tt class="docutils literal"><span class="pre">{path}</span></tt> is the absolute
+path to your Powerline installation directory:</p>
+<div class="highlight-lua"><div class="highlight"><pre><span class="nb">package.path</span> <span class="o">=</span> <span class="nb">package.path</span> <span class="o">..</span> <span class="s1">&#39;</span><span class="s">;{path}/powerline/bindings/awesome/?.lua&#39;</span>
+<span class="nb">require</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">powerline&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Then add the <tt class="docutils literal"><span class="pre">powerline_widget</span></tt> to your <tt class="docutils literal"><span class="pre">wibox</span></tt>:</p>
+<div class="highlight-lua"><div class="highlight"><pre><span class="n">right_layout</span><span class="p">:</span><span class="n">add</span><span class="p">(</span><span class="n">powerline_widget</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
@@ -290,6 +312,7 @@ tested (not installable by pip).</p>
 <li><a class="reference internal" href="#ipython-prompt">IPython prompt</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#awesome-widget">Awesome widget</a></li>
 </ul>
 </li>
 </ul>
