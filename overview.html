@@ -239,6 +239,28 @@ absolute path to your Powerline installation directory:</p>
 <div class="highlight-python"><pre>source '{path}/powerline/bindings/tmux/powerline.conf'</pre>
 </div>
 </div>
+<div class="section" id="ipython-prompt">
+<h4>IPython prompt<a class="headerlink" href="#ipython-prompt" title="Permalink to this headline">¶</a></h4>
+<p>For IPython&lt;0.11 add the following lines to your
+<tt class="file docutils literal"><span class="pre">.ipython/ipy_user_conf.py</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># top</span>
+<span class="kn">from</span> <span class="nn">powerline.bindings.ipython.pre_0_11</span> <span class="kn">import</span> <span class="n">setup</span> <span class="k">as</span> <span class="n">powerline_setup</span>
+
+<span class="c"># main() function (assuming you launched ipython without configuration to</span>
+<span class="c"># create skeleton ipy_user_conf.py file):</span>
+<span class="n">powerline_setup</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>For IPython&gt;=0.11 add the following line to your <tt class="file docutils literal"><span class="pre">ipython_config.py</span></tt>
+file in the profile you are using:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">c</span><span class="o">.</span><span class="n">InteractiveShellApp</span><span class="o">.</span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s">&#39;powerline.bindings.ipython.post_0_11&#39;</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>IPython=0.11* is not supported and does not work. IPython&lt;0.10 was not
+tested (not installable by pip).</p>
+</div>
 </div>
 </div>
 </div>
@@ -265,6 +287,7 @@ absolute path to your Powerline installation directory:</p>
 <li><a class="reference internal" href="#bash-prompt">Bash prompt</a></li>
 <li><a class="reference internal" href="#zsh-prompt">Zsh prompt</a></li>
 <li><a class="reference internal" href="#tmux-statusline">Tmux statusline</a></li>
+<li><a class="reference internal" href="#ipython-prompt">IPython prompt</a></li>
 </ul>
 </li>
 </ul>
